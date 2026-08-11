@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+
+# Local operating-system metadata
+.DS_Store
+
+# Generated workbooks, except the deterministic synthetic fixture shipped with the repo.
+*.xlsx
+!samples/
+!samples/synthetic_coverage_book.xlsx

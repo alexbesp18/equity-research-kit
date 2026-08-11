@@ -1,0 +1,33 @@
+[project]
+name = "equity-research-kit"
+version = "0.1.0"
+description = "Reusable tooling for evidence-aware equity research workbooks: ingestion, corrections, visual lint, and clean-open QA."
+requires-python = ">=3.10"
+dependencies = [
+    "yfinance>=0.2.60",
+    "pandas>=2.0",
+    "xlsxwriter>=3.2",
+    "openpyxl>=3.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["er_kit"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
